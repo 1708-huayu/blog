@@ -1,0 +1,26 @@
+
+spring:
+#  当发布后找不到静态文件时刻使用此注释
+  resources:
+    static-locations: classpath:/
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver
+  mvc:
+    view:
+      prefix: classpath:/templates
+      suffix: .jsp
+    static-path-pattern: /**
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    enable-spring-el-compiler: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+server:
+  port: 8081
